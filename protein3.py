@@ -44,3 +44,26 @@ if st.button("Hitung Kebutuhan Protein"):
 
     st.success(f"Kebutuhan protein berdasarkan aktivitas: {kebutuhan1} gram")
     st.success(f"Kebutuhan protein berdasarkan usia & jenis kelamin: {kebutuhan2} gram")
+    # Rekomendasi makanan
+    kebutuhan_rata2 = (kebutuhan_aktivitas + kebutuhan_umur_gender) / 2
+
+    st.markdown("### Rekomendasi Makanan Tinggi Protein:")
+    if kebutuhan_rata2 < 50:
+        st.write("- Telur rebus")
+        st.write("- Tahu dan tempe")
+        st.write("- Yogurt")
+        st.write("- Susu kedelai")
+    elif kebutuhan_rata2 <= 100:
+        st.write("- Dada ayam")
+        st.write("- Ikan tuna / salmon")
+        st.write("- Telur")
+        st.write("- Susu tinggi protein")
+        st.write("- Edamame")
+    else:
+        st.write("- Steak daging sapi")
+        st.write("- Dada ayam + telur")
+        st.write("- Whey protein shake")
+        st.write("- Ikan laut (tuna, salmon)")
+        st.write("- Kacang-kacangan (almond, kacang hitam)")
+
+    st.info("Tips: Sebaiknya konsumsi protein tersebar sepanjang hari untuk penyerapan optimal.")
